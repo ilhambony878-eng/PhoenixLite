@@ -5,7 +5,7 @@ namespace Shader
 {
     bool Init()
     {
-        Logger::Info("Shader System Ready");
+        Logger::Info("Shader Ready");
         return true;
     }
 
@@ -14,18 +14,14 @@ namespace Shader
         GLuint shader = glCreateShader(type);
 
         glShaderSource(shader, 1, &source, nullptr);
-
         glCompileShader(shader);
 
         return shader;
     }
 
-    GLuint CreateProgram(
-        const char* vertex,
-        const char* fragment)
+    GLuint CreateProgram(const char* vertex, const char* fragment)
     {
         GLuint vs = Compile(GL_VERTEX_SHADER, vertex);
-
         GLuint fs = Compile(GL_FRAGMENT_SHADER, fragment);
 
         GLuint program = glCreateProgram();
@@ -41,9 +37,15 @@ namespace Shader
         return program;
     }
 
+    void Use(GLuint program)
+    {
+        if (program)
+            glUseProgram(program);
+    }
+
     void Destroy(GLuint program)
     {
-        if(program)
+        if (program)
             glDeleteProgram(program);
     }
 }
