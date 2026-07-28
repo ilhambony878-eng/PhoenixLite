@@ -1,39 +1,22 @@
 #include "Renderer.h"
 #include "Logger.h"
+#include "Shader.h"
 
 namespace Renderer
 {
-    static bool gInitialized = false;
-
     bool Init()
     {
-        if (gInitialized)
-            return true;
-
-        Logger::Info("Renderer::Init");
-
-        gInitialized = true;
+        Logger::Info("Renderer Ready");
         return true;
     }
 
-    void BeginFrame()
+    void Draw()
     {
-        // Akan dipanggil sebelum render game
-    }
-
-    void EndFrame()
-    {
-        // Akan dipanggil setelah render game
-    }
-
-    void OnDraw()
-    {
-        // Tempat shader dijalankan setiap frame
+        // Tempat menjalankan shader
     }
 
     void Shutdown()
     {
-        Logger::Info("Renderer::Shutdown");
-        gInitialized = false;
+        Logger::Info("Renderer Shutdown");
     }
 }
