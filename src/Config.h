@@ -3,6 +3,4 @@
 namespace Config
 {
     bool Init();
-
-    bool IsDebug();
 }
