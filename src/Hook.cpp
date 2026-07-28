@@ -3,6 +3,7 @@
 #include "Logger.h"
 #include "HookEngine.h"
 #include "Shader.h"
+#include "Renderer.h"
 
 namespace Hook
 {
@@ -17,6 +18,7 @@ namespace Hook
         }
 
         Shader::Init();
+        Renderer::Init();
 
         void* original = nullptr;
 
