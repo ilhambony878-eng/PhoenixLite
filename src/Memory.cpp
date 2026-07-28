@@ -1,4 +1,5 @@
 #include "Memory.h"
+
 #include <stdio.h>
 #include <string.h>
 
@@ -7,7 +8,7 @@ namespace Memory
     uintptr_t GetLibraryBase(const char* libName)
     {
         FILE* fp = fopen("/proc/self/maps", "r");
-        if (!fp)
+        if (fp == nullptr)
             return 0;
 
         char line[512];
