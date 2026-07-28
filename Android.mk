@@ -10,7 +10,8 @@ LOCAL_SRC_FILES := \
     src/Memory.cpp \
     src/Patch.cpp \
     src/Game.cpp \
-    src/Hook.cpp
+    src/Hook.cpp \
+    src/HookEngine.cpp
 
 LOCAL_CPPFLAGS := -std=c++17
 
