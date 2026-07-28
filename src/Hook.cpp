@@ -15,9 +15,9 @@ namespace Hook
             Logger::Error("Game::Init gagal.");
             return;
         }
-        
+
         Shader::Init();
-      
+
         void* original = nullptr;
 
         HookEngine::Hook(
