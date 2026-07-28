@@ -15,7 +15,8 @@ LOCAL_SRC_FILES := \
     src/Shader.cpp \
     src/Renderer.cpp \
     src/Config.cpp \
-    src/Version.cpp
+    src/Version.cpp \
+    src/Utils.cpp
 
 LOCAL_CPPFLAGS := -std=c++17
 
