@@ -6,7 +6,7 @@ namespace Memory
 {
     bool Init();
 
-    uintptr_t GetBase();
+    uintptr_t GetLibraryBase(const char* libName);
 
     bool IsReady();
 }
