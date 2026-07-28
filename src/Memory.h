@@ -1,8 +1,12 @@
 #pragma once
 
-#include <stdint.h>
+#include <cstdint>
 
 namespace Memory
 {
-    uintptr_t GetLibraryBase(const char* libName);
+    bool Init();
+
+    uintptr_t GetBase();
+
+    bool IsReady();
 }
