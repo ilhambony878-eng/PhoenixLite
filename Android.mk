@@ -12,7 +12,8 @@ LOCAL_SRC_FILES := \
     src/Game.cpp \
     src/Hook.cpp \
     src/HookEngine.cpp \
-    src/Shader.cpp
+    src/Shader.cpp \
+    src/Renderer.cpp
 
 LOCAL_CPPFLAGS := -std=c++17
 
