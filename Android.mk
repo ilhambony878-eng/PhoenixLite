@@ -8,7 +8,8 @@ LOCAL_SRC_FILES := \
     src/main.cpp \
     src/Hook.cpp \
     src/Logger.cpp \
-    src/Memory.cpp
+    src/Memory.cpp \
+    src/Patch.cpp
 
 LOCAL_CPPFLAGS := -std=c++17
 
