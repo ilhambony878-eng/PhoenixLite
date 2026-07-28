@@ -3,14 +3,21 @@
 
 namespace Renderer
 {
+    static bool gInitialized = false;
+
     bool Init()
     {
-        Logger::Info("Renderer Ready");
+        if (gInitialized)
+            return true;
+
+        Logger::Info("Renderer Initialized");
+
+        gInitialized = true;
         return true;
     }
 
-    void Render()
+    void OnDraw()
     {
-        // Tempat efek shader nantinya
+        // Tempat shader akan dijalankan setiap frame.
     }
 }
