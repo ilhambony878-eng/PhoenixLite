@@ -16,7 +16,6 @@ LOCAL_SRC_FILES := \
 
 LOCAL_CPPFLAGS := -std=c++17
 
-LOCAL_LDLIBS := \
-    -llog
+LOCAL_LDLIBS := -llog -lGLESv3
 
 include $(BUILD_SHARED_LIBRARY)
