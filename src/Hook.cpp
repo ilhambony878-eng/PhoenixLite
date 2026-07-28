@@ -1,6 +1,7 @@
 #include "Hook.h"
-#include "Game.h"
 #include "Logger.h"
+#include "Game.h"
+#include "Memory.h"
 #include "HookEngine.h"
 #include "Shader.h"
 #include "Renderer.h"
@@ -13,19 +14,25 @@ namespace Hook
 
         if (!Game::Init())
         {
-            Logger::Error("Game::Init gagal.");
+            Logger::Error("Game Init Failed");
+            return;
+        }
+
+        if (!Memory::Init())
+        {
+            Logger::Error("Memory Init Failed");
             return;
         }
 
         if (!Shader::Init())
         {
-            Logger::Error("Shader::Init gagal.");
+            Logger::Error("Shader Init Failed");
             return;
         }
 
         if (!Renderer::Init())
         {
-            Logger::Error("Renderer::Init gagal.");
+            Logger::Error("Renderer Init Failed");
             return;
         }
 
@@ -37,6 +44,6 @@ namespace Hook
             &original
         );
 
-        Logger::Info("PhoenixLite Ready.");
+        Logger::Info("PhoenixLite Ready");
     }
 }
