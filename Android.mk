@@ -5,7 +5,8 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := PhoenixLite
 
 LOCAL_SRC_FILES := \
-    src/main.cpp
+    src/main.cpp \
+    src/Logger.cpp
 
 LOCAL_CPPFLAGS := -std=c++17
 
