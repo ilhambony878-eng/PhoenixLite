@@ -1,30 +1,24 @@
 #include "Memory.h"
-
-#include <stdio.h>
-#include <string.h>
+#include "Logger.h"
 
 namespace Memory
 {
-    uintptr_t GetLibraryBase(const char* libName)
+    static uintptr_t gBase = 0;
+
+    bool Init()
     {
-        FILE* fp = fopen("/proc/self/maps", "r");
-        if (fp == nullptr)
-            return 0;
+        Logger::Info("Memory Ready");
+        gBase = 0;
+        return true;
+    }
 
-        char line[512];
+    uintptr_t GetBase()
+    {
+        return gBase;
+    }
 
-        while (fgets(line, sizeof(line), fp))
-        {
-            if (strstr(line, libName))
-            {
-                uintptr_t base = 0;
-                sscanf(line, "%lx", &base);
-                fclose(fp);
-                return base;
-            }
-        }
-
-        fclose(fp);
-        return 0;
+    bool IsReady()
+    {
+        return gBase != 0;
     }
 }
