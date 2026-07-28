@@ -3,16 +3,21 @@
 
 namespace HookEngine
 {
-    bool Hook(void* target, void* replace, void** original)
+    bool Init()
+    {
+        Logger::Info("HookEngine Ready");
+        return true;
+    }
+
+    bool Hook(
+        void* target,
+        void* replace,
+        void** original)
     {
         (void)target;
         (void)replace;
+        (void)original;
 
-        if (original)
-            *original = nullptr;
-
-        Logger::Info("HookEngine::Hook dipanggil.");
-
-        return true;
+        return false;
     }
 }
