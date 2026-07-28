@@ -3,12 +3,6 @@
 namespace Renderer
 {
     bool Init();
-
-    void BeginFrame();
-
-    void EndFrame();
-
-    void OnDraw();
-
+    void Draw();
     void Shutdown();
 }
