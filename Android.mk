@@ -6,7 +6,8 @@ LOCAL_MODULE := PhoenixLite
 
 LOCAL_SRC_FILES := \
     src/main.cpp \
-    src/Logger.cpp
+    src/Logger.cpp \
+    src/Hook.cpp
 
 LOCAL_CPPFLAGS := -std=c++17
 
