@@ -1,8 +1,6 @@
 #include <jni.h>
 #include <android/log.h>
-#include <jni.h>
 #include "Hook.h"
-
 
 extern "C"
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void*)
@@ -11,15 +9,9 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void*)
         ANDROID_LOG_INFO,
         "PhoenixLite",
         "PhoenixLite Loaded"
-
-        extern "C"
-JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void*)
-{
-    Hook::Init();
-    return JNI_VERSION_1_6;
-}
-
     );
+
+    Hook::Init();
 
     return JNI_VERSION_1_6;
 }
