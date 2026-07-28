@@ -46,12 +46,10 @@ namespace Hook
         }
 
         if (!HookEngine::Init())
-{
-    Logger::Error("HookEngine Init Failed");
-    return;
-}
-
-Logger::Info("PhoenixLite Ready");
+        {
+            Logger::Error("HookEngine Init Failed");
+            return;
+        }
 
         Logger::Info("PhoenixLite Ready");
     }
