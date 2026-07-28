@@ -17,8 +17,17 @@ namespace Hook
             return;
         }
 
-        Shader::Init();
-        Renderer::Init();
+        if (!Shader::Init())
+{
+    Logger::Error("Shader::Init gagal.");
+    return;
+}
+
+if (!Renderer::Init())
+{
+    Logger::Error("Renderer::Init gagal.");
+    return;
+}
 
         void* original = nullptr;
 
