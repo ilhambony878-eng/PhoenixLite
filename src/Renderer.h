@@ -3,5 +3,6 @@
 namespace Renderer
 {
     bool Init();
-    void Render();
+
+    void OnDraw();
 }
