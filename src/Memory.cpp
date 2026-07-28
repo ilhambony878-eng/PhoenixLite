@@ -3,22 +3,26 @@
 
 namespace Memory
 {
-    static uintptr_t gBase = 0;
+    static bool gReady = false;
 
     bool Init()
     {
         Logger::Info("Memory Ready");
-        gBase = 0;
+        gReady = true;
         return true;
     }
 
-    uintptr_t GetBase()
+    uintptr_t GetLibraryBase(const char* libName)
     {
-        return gBase;
+        (void)libName;
+
+        // Sementara dikembalikan 0.
+        // Nanti akan diisi implementasi sebenarnya.
+        return 0;
     }
 
     bool IsReady()
     {
-        return gBase != 0;
+        return gReady;
     }
 }
