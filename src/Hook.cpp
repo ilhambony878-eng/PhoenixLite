@@ -14,6 +14,7 @@ namespace Hook
     {
         Logger::Info("PhoenixLite Starting...");
         Logger::Info(Version::Name());
+        Logger::Info(Version::Code());
 
         if (!Config::Init())
         {
