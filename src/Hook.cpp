@@ -1,20 +1,19 @@
 #include "Hook.h"
-#include "Memory.h"
-#include <android/log.h>
-
-#define TAG "PhoenixLite"
+#include "Game.h"
+#include "Logger.h"
 
 namespace Hook
 {
     void Init()
     {
-        uintptr_t gtasa = Memory::GetLibraryBase("libGTASA.so");
+        Logger::Info("Memulai Hook...");
 
-        __android_log_print(
-            ANDROID_LOG_INFO,
-            TAG,
-            "libGTASA base = 0x%lx",
-            (unsigned long)gtasa
-        );
+        if (!Game::Init())
+        {
+            Logger::Error("Game::Init gagal!");
+            return;
+        }
+
+        Logger::Info("Hook berhasil diinisialisasi.");
     }
 }
