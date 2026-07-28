@@ -13,5 +13,7 @@ namespace Shader
         const char* fragment
     );
 
+    void Use(GLuint program);
+
     void Destroy(GLuint program);
 }
