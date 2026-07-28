@@ -6,12 +6,14 @@
 #include "HookEngine.h"
 #include "Shader.h"
 #include "Renderer.h"
+#include "Version.h"
 
 namespace Hook
 {
     void Init()
     {
         Logger::Info("PhoenixLite Starting...");
+        Logger::Info(Version::Name());
 
         if (!Config::Init())
         {
@@ -43,13 +45,13 @@ namespace Hook
             return;
         }
 
-        void* original = nullptr;
+        if (!HookEngine::Init())
+{
+    Logger::Error("HookEngine Init Failed");
+    return;
+}
 
-        HookEngine::Hook(
-            nullptr,
-            nullptr,
-            &original
-        );
+Logger::Info("PhoenixLite Ready");
 
         Logger::Info("PhoenixLite Ready");
     }
